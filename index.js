@@ -44,3 +44,12 @@ document.getElementById("pokemonName").addEventListener("keydown",event => {
 function capitalize(str){
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
+
+window.addEventListener("click", () => {
+  const audio = document.getElementById("themeAudio");
+  if (audio) {
+    audio.play().catch(e => {
+      console.log("Autoplay prevented:", e);
+    });
+  }
+}, { once: true });
